@@ -2,9 +2,12 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FORJADO PELO FOGO</title>
+    
+    <!-- Preload da imagem principal para melhorar LCP (Largest Contentful Paint) -->
+    <link rel="preload" as="image" href="https://imgur.com/xFANL7N.png" fetchpriority="high">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,11 +46,10 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
-      .glow-text {
-        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-      }
-      .fire-glow {
-         box-shadow: 0 0 30px rgba(193, 18, 31, 0.2);
+      /* Previne CLS reservando altura mínima para imagens se o CSS falhar */
+      img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   <script type="importmap">

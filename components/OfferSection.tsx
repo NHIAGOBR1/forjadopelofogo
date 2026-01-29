@@ -18,17 +18,17 @@ export const OfferSection: React.FC = () => {
             
             {/* Image Side */}
             <div className="order-2 md:order-1 flex justify-center relative">
-                 <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="relative z-10"
-                 >
+                 <div className="relative z-10">
+                     {/* OTIMIZAÇÃO: Removida animação contínua (bouncing) para poupar CPU e evitar repaints */}
                      <img 
                         src={BOOK_COVER}
                         alt="Ebook Forjado Pelo Fogo" 
-                        className="w-full max-w-sm drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                        loading="lazy"
+                        width={400}
+                        height={600}
+                        className="w-full max-w-sm drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:-translate-y-2 transition-transform duration-500"
                      />
-                 </motion.div>
+                 </div>
             </div>
 
             {/* Offer Content */}

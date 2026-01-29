@@ -10,10 +10,14 @@ export const AuthoritySection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 md:order-1">
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                {/* OTIMIZAÇÃO: Loading lazy e dimensões explícitas */}
                 <img 
                   src={SENNA_IMG} 
-                  alt="Ayrton Senna" 
-                  className="relative z-0 w-full rounded-sm filter grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:opacity-100" 
+                  alt="Ayrton Senna"
+                  loading="lazy"
+                  width={600}
+                  height={400} 
+                  className="relative z-0 w-full rounded-sm filter grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:opacity-100 object-cover" 
                 />
                 <p className="text-[10px] text-gray-600 mt-2 text-center uppercase tracking-widest">Exemplo de Foco Absoluto</p>
             </div>
